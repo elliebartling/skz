@@ -1,0 +1,59 @@
+$trade-gothic: "TradeGothicW01-BoldCn20_675334"
+// $utopia: 'Utopia W01 Bd'
+// $utopia-it: "Utopia W01 Bd It"
+// $serif: 'Droid Serif', serif
+$roboto: 'Roboto'
+$roboto-cond: 'Roboto Condensed'
+
+// Headers
+
+h1, h2, h3, h4
+  color: $black
+  a
+    color: $black
+  a:hover
+    color: darken($black, 10%)
+
+// Buttons!
+
+.btn
+  border-radius: 0px
+  font-family: $trade-gothic
+  text-transform: uppercase
+  letter-spacing: 1.5px
+  cursor: pointer
+
+.btn.btn-outline
+  border: 2px solid $brand-info
+  background: transparent
+  color: $brand-info
+  &:hover
+    border-color: darken($brand-info, 20%)
+    color: darken($brand-info, 20%)
+
+a
+  color: $brand-info
+
+a:hover, a:focus
+  text-decoration: none
+  color: darken($brand-info, 20%)
+
+
+.section-title
+  font-family: $trade-gothic
+  color: $black
+  letter-spacing: 1.5px
+  text-transform: uppercase
+  display: inline-block
+  position: relative
+  font-size: 26px
+  &:after
+    content: ''
+    width: 300px
+    height: 2px
+    display: inline-block
+    position: absolute
+    top: 50%
+    bottom: 50%
+    margin-left: 10px
+    background: $gray-lighter

@@ -1,0 +1,142 @@
+.single .content
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+
+.single .entry-image
+  max-height: 50vh
+  overflow: hidden
+  margin-top: 40px
+  margin-bottom: 40px
+  img
+    height: 100%
+
+.single article
+  max-width: 650px
+  margin-left: 24px + 30px
+  position: relative
+  margin-top: 20px
+  img
+    max-width: 100%
+  &:before
+    content: ""
+    width: 2px
+    height: 100%
+    position: absolute
+    right: -200px
+    top: 30px
+    background: $gray-lighter
+
+.single .entry-social
+  position: fixed
+  top: 140px
+  display: flex
+  flex-direction: column
+  margin-right: 24px
+  a
+    background: $brand-info
+    width: 30px
+    height: 30px
+    border-radius: 0px
+    color: white
+    margin-bottom: 10px
+    display: flex
+    justify-content: center
+    align-items: center
+    font-size: 18px
+    &:hover
+      background: darken($brand-info, 10%)
+
+.single #sidebar
+  padding-left: 30px
+  margin-top: 50px
+  background: transparent
+  position: relative
+  max-width: 350px
+  .section-title::after
+    max-width: 100%
+  .book
+    background: transparent
+  .widget_ninja_forms_widget
+    @extend #subscribe
+    padding: 20px
+    margin-top: 540px
+    max-width: 330px
+    &:before
+      height: 100px
+      bottom: -40px
+    nf-fields-wrap
+      display: flex
+      flex-direction: row
+      width: 100%
+
+.single .sidebar-books
+  padding-top: 0px
+
+.single #sidebar .book
+  border: transparent
+  padding: 0px
+  width: 330px
+  display: flex
+  flex-direction: row
+  margin-bottom: 30px
+  .image-link
+    margin-right: 20px
+    img
+      width: 100px
+  .image-text
+    flex-grow: 2
+  h4
+    font-family: $font-family-sans-serif
+    text-transform: none
+    letter-spacing: 0px
+    font-size: 16px
+  .book-banner
+    width: 155px
+    display: inline-block
+    padding: 10px 20px 10px 15px
+    font-size: 14px
+    font-family: $trade-gothic
+    text-transform: uppercase
+    letter-spacing: 1px
+
+.single #sidebar .widget_widget_crp
+  margin-top: 250px
+  ul
+    list-style-type: none
+    padding-left: 0px
+  li
+    margin-bottom: 20px
+
+  .crp_title
+    font-weight: bold
+    color: $black
+    display: block
+    &:hover
+      text-decoration: underline
+      text-decoration-color: $gray-light
+  .crp_author, .crp_date
+    color: $gray-light
+    font-family: $trade-gothic
+    text-transform: uppercase
+  .crp_excerpt
+    display: block
+
+.single #sidebar
+  .sidebar-title, .widget_widget_crp h3
+    font-family: $trade-gothic
+    text-transform: uppercase
+    letter-spacing: 1px
+    font-size: 20px
+    margin-bottom: 20px
+    position: relative
+    display: inline-block
+    line-height: 2.2
+    &:after
+      position: absolute
+      content: ""
+      width: 80%
+      bottom: 0
+      left: 0
+      height: 2px
+      background: $brand-info

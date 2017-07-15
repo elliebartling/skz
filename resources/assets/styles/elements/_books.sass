@@ -1,0 +1,58 @@
+#sidebar-books
+  @extend .col-3
+  margin-left: 24px
+  background: $gray-lighter
+  height: 80vh
+
+.sidebar-books
+  padding-top: 24px
+
+.book img
+  width: 100%
+  height: auto
+  // margin-bottom: 20px
+
+.book
+  position: relative
+  padding: 15px
+  border: 2px solid $gray-lighter
+
+.book a
+  transition: all 0.25s ease
+
+.book a:hover
+  // opacity: .85
+  img
+    // box-shadow: 0px 8px 20px rgba(black, .3)
+    // transition: all 0.25s ease
+
+.book .book-title
+  font-size: 18px
+  margin-bottom: 20px
+  &:hover
+    text-decoration: underline
+    text-decoration-color: $gray-light
+
+.book .book-author
+  color: $gray-dark
+  display: none
+
+.book .book-banner
+  display: flex
+  flex-direction: row
+  justify-content: flex-start
+  align-items: center
+  background: $brand-info
+  color: white
+  padding: 10px 15px
+  top: 270px
+  right: -20px
+  margin-top: 10px
+  i
+    margin-right: 10px
+  &:hover
+    background: darken($brand-info, 10%)
+
+#books .container
+  display: flex
+  flex-direction: row

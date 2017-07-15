@@ -1,0 +1,50 @@
+#subscribe
+  width: 100%
+  background: $gray-lighter
+  border-radius: 0px
+  padding: 50px
+  position: relative
+  &:before
+    content: ''
+    max-width: 300px
+    width: 40%
+    height: 200px
+    background-image: url(../../dist/img/logo-white.png)
+    background-repeat: no-repeat
+    background-size: contain
+    position: absolute
+    right: 0
+    // bottom: -70px
+
+  h2, h3
+    font-family: $trade-gothic
+    text-transform: uppercase
+    color: $brand-primary
+    margin-bottom: 1.5rem
+
+
+.ninja-forms-field
+  @extend .form-control
+  border-radius: 0px
+  border-color: transparent
+
+input.ninja-forms-field[type=button]
+  @extend .btn
+  background: $brand-primary
+  text-transform: uppercase
+  font-family: $trade-gothic
+  color: white
+  &:hover
+    background: $brand-info
+
+.nf-field-container
+  margin-bottom: 0px
+
+nf-fields-wrap
+  display: flex
+  flex-direction: row
+  width: 45%
+
+nf-field:first-of-type
+  width: 100%
+  margin-right: 10px
