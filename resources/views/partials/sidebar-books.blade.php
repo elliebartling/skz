@@ -23,4 +23,10 @@
       </div>
     @endwhile
   </div>
+  <div class="sidebar-item advertisements">
+    <p class="advertisement-title">Advertisement</p>
+    <div class="advertisement">
+      <img src="http://via.placeholder.com/300x600">
+    </div>
+  </div>
 </div>

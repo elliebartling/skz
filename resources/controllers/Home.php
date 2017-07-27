@@ -9,7 +9,7 @@ class Home extends Controller
 {
   public function featured() {
     $args = array(
-      'posts_per_page' => 7,
+      'posts_per_page' => 5,
     );
 
     $the_query = new WP_Query($args);

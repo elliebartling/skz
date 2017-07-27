@@ -15,7 +15,7 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_style('app.css', asset_path('styles/app.css'), false, null);
     wp_enqueue_script('app.js', asset_path('scripts/app.js'), ['jquery'], null, true);
     wp_enqueue_script('fontawesome', 'https://use.fontawesome.com/314786a105.js', [], null, true);
-    wp_enqueue_style('app.css', 'http://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"', false, null);
+    wp_enqueue_style('slick', 'http://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"', false, null);
 }, 100);
 
 /**
@@ -92,6 +92,18 @@ add_action('widgets_init', function () {
     register_sidebar([
         'name'          => __('Footer', 'sage'),
         'id'            => 'sidebar-footer'
+    ] + $config);
+    register_sidebar([
+        'name'          => __('Article Footer', 'sage'),
+        'id'            => 'sidebar-article-footer'
+    ] + $config);
+    register_sidebar([
+        'name'          => __('Top-Right Nav', 'sage'),
+        'id'            => 'sidebar-top-right-nav'
+    ] + $config);
+    register_sidebar([
+        'name'          => __('Page Footer', 'sage'),
+        'id'            => 'sidebar-page-footer'
     ] + $config);
 });
 

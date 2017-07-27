@@ -1,0 +1,67 @@
+.archive article,
+.search article
+  @extend .col-12
+  @extend .col-md-6
+  @extend .col-lg-4
+  margin-bottom: 40px
+  .entry-image
+    width: 100%
+    height: 300px
+    overflow: hidden
+    margin-bottom: 20px
+    img
+      object-fit: cover
+      width: 100%
+      height: 100%
+
+.search .byline.author, .search .entry-meta
+  margin-bottom: 5px
+
+.content .search-form input[type="search"]
+  @extend .form-control
+  border-radius: 0px
+  padding: 10px 10px
+.content .search-form input[type="submit"]
+  @extend .btn-primary
+  padding: 9px 10px
+  border: 0px solid transparent
+  font-family: $trade-gothic
+  text-transform: uppercase
+
+.no-posts
+  text-align: center
+  h1
+    margin-bottom: 30px
+
+.no-posts .try-again
+  font-family: $trade-gothic
+  text-transform: uppercase
+  font-size: 20px
+  margin-bottom: 20px
+  margin-top: 20px
+  // font-style: italic
+.content .aliens
+  max-width: 600px
+  border-radius: 4px
+  margin: auto
+  width: 90%
+  border-radius: 4px
+  margin-bottom: 1rem
+
+.no-posts .menu
+  list-style-type: none
+  padding-left: 0px
+  li
+    display: inline-block
+    margin-right: 10px
+    font-family: $trade-gothic
+    text-transform: uppercase
+    letter-spacing: 2px
+  li:last-of-type
+    margin-right: 0px
+
+.no-posts .textwidget
+  display: none
+
+.content
+  min-height: 80vh

@@ -1,26 +1,46 @@
 // Article defaults
 .entry-title
-  font-family: $roboto
-  font-weight: 900
+  font-family: $cond
   letter-spacing: -0.5px
   margin-bottom: .7rem
-
+  color: $black
+  a:hover
+    text-decoration: underline
 .entry-meta
   display: flex
   flex-direction: row
+  flex-wrap: wrap
   color: $gray-light
   margin-bottom: .7rem
   p
     margin-bottom: 0.5rem
 
-.author
-  font-family: $font-family-sans-serif
+article .author
+  font-family: $trade-gothic
+  text-transform: uppercase
+  letter-spacing: 1px
   color: $gray-light
+  // display: none
 
-.author a
-  color: $gray-dark
+article .author a
+  color: $gray-light
+  position: relative
+  &::after
+    content: ""
+    position: absolute
+    height: 2px
+    width: 100%
+    opacity: 0
+    background: $black
+    left: 0
+    bottom: -5px
   &:hover
     color: $black
+    transition: all 0.25s ease
+    &:after
+      transition: all 0.25s ease
+      width: 100%
+      opacity: 1
 
 time
   font-family: $trade-gothic
@@ -32,9 +52,25 @@ time
   margin-left: 10px
   text-transform: uppercase
   font-family: $trade-gothic
-  color: $gray-dark
+  color: $gray-light
+  position: relative
+  &:after
+    content: ""
+    position: absolute
+    height: 2px
+    width: 100%
+    opacity: 0
+    background: $black
+    left: 0
+    bottom: -5px
   &:hover
-    color: $brand-info
+    color: $black
+    transition: all 0.25s ease
+    &:after
+      transition: all 0.25s ease
+      width: 100%
+      opacity: 1
+
 
 
 
@@ -44,10 +80,3 @@ time
   img
     width: 100%
     height: auto
-
-
-.home article.featured .entry-title
-  font-size: 30px
-
-.home .entry-title
-  font-size: 26px

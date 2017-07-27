@@ -113,7 +113,7 @@ function title()
         return __('Latest Posts', 'sage');
     }
     if (is_author()) {
-      return "by " . get_the_author_meta('first_name') . " " . get_the_author_meta('last_name');
+      return get_the_author_meta('first_name') . " " . get_the_author_meta('last_name');
     }
     if (is_archive()) {
         return get_the_archive_title();

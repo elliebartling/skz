@@ -1,9 +1,10 @@
 $trade-gothic: "TradeGothicW01-BoldCn20_675334"
-// $utopia: 'Utopia W01 Bd'
-// $utopia-it: "Utopia W01 Bd It"
+$utopia: 'Utopia W01 Bd'
+$utopia-it: "Utopia W01 Bd It"
 // $serif: 'Droid Serif', serif
 $roboto: 'Roboto'
 $roboto-cond: 'Roboto Condensed'
+$cond: 'FranklinGothicW01-Cond'
 
 // Headers
 
@@ -19,6 +20,7 @@ h1, h2, h3, h4
 .btn
   border-radius: 0px
   font-family: $trade-gothic
+  // font-family: $cond
   text-transform: uppercase
   letter-spacing: 1.5px
   cursor: pointer
@@ -36,24 +38,49 @@ a
 
 a:hover, a:focus
   text-decoration: none
-  color: darken($brand-info, 20%)
-
+  color: $brand-primary
 
 .section-title
-  font-family: $trade-gothic
+  font-family: $cond
   color: $black
   letter-spacing: 1.5px
   text-transform: uppercase
   display: inline-block
+  font-style: italic
   position: relative
-  font-size: 26px
+  font-size: 24px
   &:after
     content: ''
-    width: 300px
-    height: 2px
+    width: 80%
+    height: 4px
     display: inline-block
     position: absolute
-    top: 50%
-    bottom: 50%
-    margin-left: 10px
+    // top: 50%
+    left: 0
+    bottom: -10px
+    // margin-left: 10px
+    background: $gray-lighter
+
+
+.archive .page-header,
+.search .page-header
+  margin-bottom: 40px
+  margin-top: 20px
+
+.special-header,
+.page-header h1
+  font-size: $font-size-h1
+  font-family: $cond
+  text-transform: uppercase
+  font-style: italic
+  position: relative
+  display: inline-block
+  margin-bottom: 20px
+  &::after
+    content: ""
+    height: 4px
+    width: 80%
+    position: absolute
+    left: 0
+    bottom: -10px
     background: $gray-lighter

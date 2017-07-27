@@ -1,0 +1,49 @@
+.donate-widget h3:first-of-type, .give-form-title
+  @extend .special-header
+  margin-bottom: 40px !important
+
+.give-form-wrap
+  input
+    @extend .form-control
+  .form-row-wide
+    display: flex
+    flex-direction: row
+    align-items: center
+    justify-content: center
+  // form[id*=give-form] .give-donation-amount
+  //
+  //   .give-currency-symbol
+  //     border-color: transparent
+  //     background: transparent
+  //     font-size: 30px
+  //   #give-amount
+  //     width: auto
+  //     height: 70px
+  //     border-color: transparent
+  //     border-bottom: 2px solid $black
+  //     font-size: 60px
+  //     font-family: $cond
+      font-style: italic
+
+  .give-donation-levels-wrap
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    align-items: center
+    justify-content: center
+    margin-bottom: 40px !important
+    margin-top: 1.5rem !important
+
+  .give-btn
+    font-family: $trade-gothic
+    text-transform: uppercase
+    border: 2px solid $black
+    background: transparent
+    letter-spacing: 1px
+    // color: white
+    &:hover, &:focus
+      background: $black
+      color: white
+  .give-btn-reveal
+    background: $black
+    color: white

@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<section id="posts" class="section">
-  <main>
+<section id="posts" class="section row">
+  <div class="main col-12 col-lg-9">
     @if (!$featured->have_posts())
       <div class="alert alert-warning">
         {{ __('Sorry, no results were found.', 'sage') }}
@@ -11,42 +11,40 @@
     @endif
 
     @while ($featured->have_posts() && $featured->current_post < 0) @php($featured->the_post())
-      <div class="header row">
+      <div class="featured-header">
         @include ('partials.content-featured')
         @php($first = false)
       </div>
     @endwhile
-
-
-    <h1 class="section-title" id="latest-title">Latest</h1>
-    <div class="latest-container">
-      <div id="latest">
+    <div class="latest">
+      <div class="section-title-wrap">
+        <h1 class="section-title" id="latest-title">Latest</h1>
+      </div>
+      <div class="latest-container">
         @while ($featured->have_posts()) @php($featured->the_post())
-          @if($featured->current_post == 1 || $featured->current_post == 4)
+          {{-- @if($featured->current_post == 1 || $featured->current_post == 4)
             <div class="row">
-          @endif
+          @endif --}}
             @include ('partials.content-'.(get_post_type() === 'post' ?: get_post_type()))
-          @if($featured->current_post == 3 || $featured->current_post == 6)
+          {{-- @if($featured->current_post == 3 || $featured->current_post == 6)
             </div>
-          @endif
+          @endif --}}
         @endwhile
-        <a href="" class="btn btn-outline btn-info">see all</a>
+        <a href="" class="btn btn-outline btn-info see-more-btn">see more</a>
       </div>
     </div>
-
-  </main>
-  <aside id="sidebar-books">
-    @include('partials.sidebar-books')
-  </aside>
+  </div>
+  @include('partials.sidebar-editorspick')
 </section>
-<section id="books" class="section">
-  <h1 class="section-title">Books</h1>
-  <div class="container">
+<section id="books" class="">
+  <div class="section-title-wrap books-title-wrap row">
+    <h1 class="section-title" id="books-title">Bookshelf</h1>
+  </div>
+  <div class="carousel row">
     @while ($books->have_posts()) @php($books->the_post())
         @include ('partials.content-'.(get_post_type() === 'post' ?: get_post_type()))
     @endwhile
   </div>
-  <a href="" class="btn btn-outline btn-info">see all</a>
 </section>
 <aside id="subscribe">
   <h2>Skepticism in your inbox</h2>

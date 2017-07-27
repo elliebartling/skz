@@ -1,10 +1,12 @@
 $nav-z-base: 200
 
 body
-  padding-top: 80px
+  padding-top: 100px
+  +breakpoint($sm)
+    padding-top: 80px
 
 #header
-  border-bottom: 2px solid $gray-lighter
+  border-bottom: 1px solid $gray-lighter
   background: #FFF
   position: fixed
   top: 0
@@ -17,9 +19,15 @@ body
   justify-content: space-between
   align-items: center
   padding: 10px
+  padding-left: 0px
+  padding-right: 0px
   background: #FFF
+  padding-bottom: 0px
 
 .nav .brand
+  @extend .col-2
+  @extend .col-md-5
+  margin-bottom: 10px
   display: flex
   flex-direction: row
   align-items: center
@@ -27,52 +35,375 @@ body
   color: $brand-primary
 
 .nav .title
+  display: none
+  +breakpoint($lg)
+    display: block
   font-family: $trade-gothic
   text-transform: uppercase
   font-size: 1.4rem
   letter-spacing: 1.5px
 
+// .nav .title.title-mobile
+//   display: block
+//   +breakpoint($md)
+//     display: none
+
 .nav img
-  max-height: 40px
-  margin-right: 10px
+  max-height: 35px
+  margin-right: 20px
+
+.nav-primary
+  @extend .col
+  @extend .col-md-5
+  left: 0
+  right: 0
+  opacity: 1
+  position: fixed
+  top: 55px
+  background: white
+  width: 100%
+  padding-left: 15px
+  padding-right: 15px
+  +breakpoint($sm)
+    top: 50%
+    transform: translateY(-50%)
+    height: 100%
+    opacity: 0
+    position: absolute
+    margin-left: 80px
+    left: 10px
+    padding-left: 10px
+    background: white
+    display: flex
+    justify-content: flex-start
+    z-index: $nav-z-base + 2
 
 
-.nav .nav-primary
-  opacity: 0
-  position: absolute
-  left: 80px
-  width: 80%
-  display: flex
-  justify-content: flex-start
-  z-index: $nav-z-base + 2
 
 #header.active .nav .nav-primary
   opacity: 1
   transition: all 0.25s ease
 
-.nav .nav-primary li
-  margin-right: 10px
+.nav-primary ul
+  height: 100%
+  padding: 0px
+.nav-primary li
+  margin-right: 20px
+  height: 100%
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  position: relative
+  padding-top: 10px
+  padding-bottom: 10px
+  &:after
+    content: ""
+    position: absolute
+    height: 4px
+    width: 100%
+    opacity: 0
+    background: $brand-primary
+    left: 0
+    bottom: 0
+.nav-primary li:hover
+  &:after
+    width: 100%
+    opacity: 1
+    transition: all 0.25s ease
 
-.nav .nav-primary li a
-  /* Books: */
+.nav-primary .current-menu-item::after
+  width: 100%
+  opacity: 1
+
+.nav-primary li:last-of-type
+  margin-right: 0px
+
+.nav-primary li a
   font-family: $trade-gothic
   font-size: 16px
   color: rgba(black, 0.2)
   letter-spacing: 2px
   text-transform: uppercase
   font-weight: bold
+  position: relative
   &:hover
-    color: $brand-info
+    color: $brand-primary
+    transition: all 0.25s ease
+  // &:after
+  //   content: ""
+  //   position: absolute
+  //   height: 4px
+  //   width: 0%
+  //   background: $brand-primary
+  //   left: 0
+  //   bottom: -14px
+  //   +breakpoint($sm)
+  //     bottom: -18px
 
-footer .container
+.nav-primary .current-menu-item a
+  color: $brand-primary
+  &:after
+    width: 100%
+
+
+
+
+
+.nav-secondary
+  @extend .col-9
+  @extend .col-md-5
+  text-align: right
+  display: flex
+  flex-direction: row
+  align-items: center
+  justify-content: flex-end
+  padding-bottom: 10px
+
+.nav-secondary .btn-info
+  // margin-bottom: 7px
+
+.nav-secondary .vertical-line
+  position: relative
+  display: block
+  // margin-bottom: 10px
+
+.nav-secondary .vertical-line
+  width: 2px
+  height: 32px
+  background: $gray-lighter
+  display: block
+  position: relative
+  margin-right: 10px
+
+.nav-secondary .open-search
+  display: none
+  background: transparent
+  color: $black
+  border: 2px solid $gray-lighter
+  // border: none
+  margin-right: 10px
+  padding: 7px 12px
+
+
+.nav-secondary form
+  @extend .form-inline
+  text-align: right
+  flex-wrap: nowrap
+  justify-content: flex-end
+
+.nav-secondary.open form
+  input[type="search"]
+    width: 100%
+
+
+.nav-secondary input
+  @extend .form-control
+  border-radius: 0px
+  border-color: transparent
+
+.nav-secondary input[type="submit"]
+  font-family: FontAwesome
+  color: $gray-light
+  cursor: pointer
+  width: 50px
+  &:hover, &:focus
+    color: $black
+
+  // margin-bottom: 7px
+.nav-secondary .form-group
+  margin-bottom: 0px
+.nav-secondary input[type="submit"]:focus
+  border: none
+
+.nav-secondary input[type="search"]
+  width: 20px
+  position: relative
+  top: 1px
+  padding-bottom: 10px
+  border: 0px solid transparent
+
+.nav-secondary.open input[type="search"]
+  background: $gray-lightest
+
+.nav-secondary input[type="search"]:focus
+  width: 100%
+  transition: all 0.25s ease
+  background: $gray-lightest
+
+.nav-secondary input[type="search"]:focus + .nav-secondary input[type="submit"]
+  color: $black
+//   display: flex
+//   flex-direction: row
+//   align-items: center
+//   justify-content: flex-end
+//   .widget_search
+//     width: 0%
+//     opacity: 0
+//   .open-search
+//     display: none
+//     margin-right: 10px
+//     border: 0px solid transparent
+//     background: transparent
+//     cursor: pointer
+//     z-index: $nav-z-base + 90
+//   .widget_search
+//     // position: fixed
+//     height: auto
+//     top: 50px
+//     left: 0
+//     width: 100%
+//     // padding: 20px
+//     background: white
+//     opacity: 1
+//     form
+//       @extend .container
+//
+// .nav .nav-secondary.open
+//   .open-search
+//     display: none
+//     width: 0%
+//     opacity: 0
+//   .widget_search
+//     width: 100%
+//     opacity: 1
+//   input[type="search"]
+//     width: 100%
+//     transition: all 0.25s ease
+//   label
+//     border-bottom: 2px solid $gray-light
+//     transition: all 0.25s ease
+//
+// .nav .nav-secondary form
+//   display: flex
+//   flex-direction: row
+//   justify-content: flex-end
+//   input[type="search"]
+//     @extend .form-control
+//     max-width: 90%
+//     border-radius: 0px
+//     border: 0px transparent
+//   label
+//     display: flex
+//     flex-direction: row
+//     justify-content: center
+//     align-items: center
+//     margin-right: 0px
+//     margin-bottom: 0px
+//     border-bottom: 2px solid transparent
+//     padding-right: 10px
+//     &::after
+//       @extend .col
+//       max-width: 10%
+//       content: "\f002"
+//       font-family: FontAwesome
+//       font-style: normal
+//       font-weight: normal
+//       text-decoration: inherit
+//   input[type="submit"]
+//     @extend .btn-primary
+//     padding: 5px 10px
+//     font-family: $trade-gothic
+//     text-transform: uppercase
+//     letter-spacing: 2px
+//     margin-left: 10px
+//     height: 100%
+//     cursor: pointer
+//     // Alt
+//     // opacity: 0
+//     position: absolute
+//     width: 35px
+
+
+
+
+
+
+.screen-reader-text
+  display: none
+
+nav.navigation
+  text-align: right
+  margin-bottom: 60px
+.nav-links
+  @extend .row
   display: flex
   flex-direction: row
   justify-content: space-between
-  margin-top: 40px
+  div
+    @extend .col
+  .nav-previous
+    @extend .col
+    text-align: right
+    order: 2
+  .nav-next
+    text-align: left
+  a
+    font-family: $cond
+    text-transform: uppercase
+    font-style: italic
+    letter-spacing: 1px
+    color: $gray-light
+    position: relative
+    &::after
+      content: ""
+      position: absolute
+      height: 2px
+      width: 100%
+      opacity: 0
+      background: $black
+      left: 0
+      bottom: -5px
+    &:hover
+      color: $black
+      transition: all 0.25s ease
+      &:after
+        transition: all 0.25s ease
+        width: 100%
+        opacity: 1
 
-footer ul.menu
+
+
+
+
+
+
+
+footer.content-info
+  border-top: 1px solid $gray-lighter
+  padding-bottom: 5px
+  padding-top: 20px
+  background: $gray-lighter
+  margin-top: 40px
+  font-family: $trade-gothic
+  text-transform: uppercase
+footer.content-info .container
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+
+footer.content-info ul.menu
   list-style-type: none
   padding-left: 0px
   li
     display: inline-block
     margin-right: 10px
+    a
+      font-family: $trade-gothic
+      font-size: 16px
+      color: rgba(black, 0.2)
+      letter-spacing: 2px
+      text-transform: uppercase
+      font-weight: bold
+      position: relative
+      &:hover
+        color: $brand-primary
+        transition: all 0.25s ease
+      &:after
+        content: ""
+        position: absolute
+        height: 4px
+        width: 0%
+        background: $brand-primary
+        left: 0
+        bottom: -21px

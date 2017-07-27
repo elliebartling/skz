@@ -7,14 +7,14 @@ $cyan: #08A3C6;
 $orange: #ED8B64;
 $black: #1E1E25;
 
-$gray-base: $black;
+$gray-base: #000000;
 $gray-darker: lighten($gray-base, 13.5%);
 $gray-dark: lighten($gray-base, 20%);
 $gray: lighten($gray-base, 33.5%);
-$gray-light: lighten($gray-base, 50%);
+$gray-light: lighten($gray-base, 70%);
 $gray-lighter: #E6E6E6;
 
-$brand-primary: $navy;
+$brand-primary: $black;
 $brand-success: #5cb85c;
 $brand-info: $cyan;
 $brand-warning: #f0ad4e;
@@ -24,12 +24,17 @@ $border-radius-base: 0px;
 $border-radius-large: 0px;
 $border-radius-small: 0px;
 
-$container-max-widths: (
-  sm: 560px,
-  md: 820px,
-  lg: 1100px,
-  xl: 1300px
-);
+$sm: 560px;
+$md: 820px;
+$lg: 1100px;
+$xl: 1300px;
+
+// $container-max-widths: (
+//   sm: $sm,
+//   md: $md,
+//   lg: $lg,
+//   xl: $xl
+// );
 
 
 $font-family-sans-serif: 'Roboto';

@@ -1,0 +1,89 @@
+.page .main
+  @extend .row
+  .col
+    margin: auto
+    max-width: 800px
+  h1, h2, h3, h4
+    margin-top: 20px
+    margin-bottom: 1rem
+
+.page
+  .contributors-wrap
+    width: 100%
+    display: flex
+    flex-direction: column
+    margin-top: 40px
+    .contributor
+      display: flex
+      flex-direction: row
+      // width: 200px
+      // margin-right: 20px
+      // .image
+      //   width: 100%
+      //   img
+      //     width: 100%
+      //     height: 100%
+      //     object-fit: cover
+      h2
+        font-family: $trade-gothic
+        text-transform: uppercase
+        font-weight: bold
+        a:hover
+          text-decoration: underline
+
+
+.contributor
+  display: inline-block
+  flex-direction: row
+  justify-content: flex-start
+  align-items: center
+  margin-bottom: 40px
+  vertical-align: top
+  max-width: 90%
+  .image
+    width: 150px
+    height: 150px
+    overflow: hidden
+    display: inline-block
+    vertical-align: top
+    img
+      object-fit: cover
+      width: 100%
+      height: 100%
+  .details-wrapper
+    display: inline-block
+    vertical-align: top
+    padding: 40px
+    padding-left: 30px
+    min-height: 200px
+    position: relative
+    left: -4px
+    h1
+      font-family: $cond
+      text-transform: uppercase
+      // font-style: italic
+      letter-spacing: 1px
+      display: flex
+      flex-direction: column
+      position: relative
+      margin-bottom: 20px
+      &::after
+        content: ""
+        height: 4px
+        width: 80%
+        position: absolute
+        left: 0
+        bottom: -10px
+        background: $gray-lighter
+    h1:hover
+      &::after
+        background: $black
+
+.page.donate
+  text-align: center
+  .page-header
+    text-align: center
+  .main .btn
+    margin-bottom: 0.5rem
+  .main h1
+    line-height: 1.2

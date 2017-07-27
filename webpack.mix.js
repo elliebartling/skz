@@ -11,17 +11,23 @@ let mix = require('laravel-mix');
  |
  */
 
+mix.autoload({
+  $: "jquery",
+  jQuery: "jquery"
+})
+
 mix.js('resources/assets/scripts/app.js', 'dist/scripts')
    .copyDirectory('resources/assets/images', 'dist/img')
    .copyDirectory('resources/assets/fonts', 'dist/fonts')
    .fastSass('resources/assets/styles/app.sass', 'dist/styles')
    .browserSync({
-       proxy: 'skeptical.dev',
+       proxy: 'skeptic.dev',
        files: [
-         'resources/**/**.*'
+         'dist/scripts/*.js',
+         'dist/styles/app.css'
        ]
      })
-   
+
 
 
 // Full API
