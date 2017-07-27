@@ -22,7 +22,7 @@
           {{-- <a class="image-link" target="_blank" href="{{ the_permalink() }}">
             {{ the_post_thumbnail() }}
           </a> --}}
-          @include('partials/entry-meta')
+          {{-- @include('partials/entry-meta') --}}
           <a class="content-link" target="_blank" href="{{ the_permalink() }}">
             <h4 class="pick-title">{{ get_the_title() }}</h4>
           </a>

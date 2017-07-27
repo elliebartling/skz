@@ -116,6 +116,7 @@ function title()
       return get_the_author_meta('first_name') . " " . get_the_author_meta('last_name');
     }
     if (is_archive()) {
+        return post_type_archive_title( '', false );
         return get_the_archive_title();
     }
     if (is_search()) {

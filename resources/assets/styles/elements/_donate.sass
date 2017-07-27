@@ -1,36 +1,69 @@
 .donate-widget h3:first-of-type, .give-form-title
   @extend .special-header
-  margin-bottom: 40px !important
+  margin-bottom: 20px !important
+
+.give_warning
+  display: none !important
 
 .give-form-wrap
   input
     @extend .form-control
-  .form-row-wide
+  .give-total-wrap:before
+    content: "Amount"
+    display: block
+    position: relative
+    font-family: $trade-gothic
+    text-transform: uppercase
+    color: $gray-light
+    letter-spacing: 1px
+    text-align: left
+    text-align: center
+    // padding-left: 40px
+    margin-bottom: 5px
+
+  form[id*=give-form] .give-donation-amount
     display: flex
     flex-direction: row
     align-items: center
     justify-content: center
-  // form[id*=give-form] .give-donation-amount
-  //
-  //   .give-currency-symbol
-  //     border-color: transparent
-  //     background: transparent
-  //     font-size: 30px
-  //   #give-amount
-  //     width: auto
-  //     height: 70px
-  //     border-color: transparent
-  //     border-bottom: 2px solid $black
-  //     font-size: 60px
-  //     font-family: $cond
-      font-style: italic
+    .give-currency-symbol
+      // padding: 20px
+      font-family: $cond
+      border-color: transparent
+      background: transparent
+      font-size: 50px
+      // padding-left: 0px
+      font-weight: bold
+      // color: $gray-light
+      border: 2px solid $black
+      border-right: 0px
+      height: 80px
+      display: flex
+      justify-content: center
+      align-items: center
+      // padding-left:
+    #give-amount
+      // padding: 20px
+      width: 250px
+      text-align: center
+      color: $black
+      height: 80px
+      padding-left: 0px
+      // border: 0px solid transparent
+      border: 2px solid $black
+      border-left: 0px
+      font-size: 60px
+      font-family: $cond
+      // font-style: italic
+  .give-label
+    text-align: left
 
   .give-donation-levels-wrap
     display: flex
     flex-direction: row
     flex-wrap: wrap
-    align-items: center
-    justify-content: center
+    align-items: flex-start
+    justify-content: flex-start
     margin-bottom: 40px !important
     margin-top: 1.5rem !important
 
@@ -40,10 +73,31 @@
     border: 2px solid $black
     background: transparent
     letter-spacing: 1px
+    border-radius: 0px
     // color: white
     &:hover, &:focus
       background: $black
       color: white
-  .give-btn-reveal
+  .give-btn-reveal, .give-submit
+    width: auto
     background: $black
     color: white
+    padding: 15px 25px
+    font-size: 22px
+  #give-payment-mode-select, #give_parchase_form_wrap
+    // background: $gray-lighter
+    // padding: 10px
+    margin-bottom: 40px
+  legend
+    @extend .special-header
+    height: auto
+    width: auto !important
+    text-align: center
+    position: relative
+    border-color: transparent !important
+    margin-bottom: 40px !important
+
+  .give-submit-button-wrap
+    display: flex
+    justify-content: center
+    align-items: center
