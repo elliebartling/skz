@@ -43,6 +43,10 @@ class ComposerStaticInit2017800ba05243e7ea0832de64e8fe05
             'Illuminate\\Container\\' => 21,
             'Illuminate\\Config\\' => 18,
         ),
+        'D' => 
+        array (
+            'Doctrine\\Common\\Inflector\\' => 26,
+        ),
         'C' => 
         array (
             'Composer\\Installers\\' => 20,
@@ -114,6 +118,10 @@ class ComposerStaticInit2017800ba05243e7ea0832de64e8fe05
         array (
             0 => __DIR__ . '/..' . '/illuminate/config',
         ),
+        'Doctrine\\Common\\Inflector\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Common/Inflector',
+        ),
         'Composer\\Installers\\' => 
         array (
             0 => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers',
@@ -121,16 +129,6 @@ class ComposerStaticInit2017800ba05243e7ea0832de64e8fe05
         'Brain\\Hierarchy\\' => 
         array (
             0 => __DIR__ . '/..' . '/brain/hierarchy/src',
-        ),
-    );
-
-    public static $prefixesPsr0 = array (
-        'D' => 
-        array (
-            'Doctrine\\Common\\Inflector\\' => 
-            array (
-                0 => __DIR__ . '/..' . '/doctrine/inflector/lib',
-            ),
         ),
     );
 
@@ -153,6 +151,7 @@ class ComposerStaticInit2017800ba05243e7ea0832de64e8fe05
         'Generic_Sniffs_ControlStructures_InlineControlStructureSniff' => __DIR__ . '/..' . '/squizlabs/php_codesniffer/CodeSniffer/Standards/Generic/Sniffs/ControlStructures/InlineControlStructureSniff.php',
         'Generic_Sniffs_Debug_CSSLintSniff' => __DIR__ . '/..' . '/squizlabs/php_codesniffer/CodeSniffer/Standards/Generic/Sniffs/Debug/CSSLintSniff.php',
         'Generic_Sniffs_Debug_ClosureLinterSniff' => __DIR__ . '/..' . '/squizlabs/php_codesniffer/CodeSniffer/Standards/Generic/Sniffs/Debug/ClosureLinterSniff.php',
+        'Generic_Sniffs_Debug_ESLintSniff' => __DIR__ . '/..' . '/squizlabs/php_codesniffer/CodeSniffer/Standards/Generic/Sniffs/Debug/ESLintSniff.php',
         'Generic_Sniffs_Debug_JSHintSniff' => __DIR__ . '/..' . '/squizlabs/php_codesniffer/CodeSniffer/Standards/Generic/Sniffs/Debug/JSHintSniff.php',
         'Generic_Sniffs_Files_ByteOrderMarkSniff' => __DIR__ . '/..' . '/squizlabs/php_codesniffer/CodeSniffer/Standards/Generic/Sniffs/Files/ByteOrderMarkSniff.php',
         'Generic_Sniffs_Files_EndFileNewlineSniff' => __DIR__ . '/..' . '/squizlabs/php_codesniffer/CodeSniffer/Standards/Generic/Sniffs/Files/EndFileNewlineSniff.php',
@@ -393,7 +392,6 @@ class ComposerStaticInit2017800ba05243e7ea0832de64e8fe05
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInit2017800ba05243e7ea0832de64e8fe05::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit2017800ba05243e7ea0832de64e8fe05::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit2017800ba05243e7ea0832de64e8fe05::$prefixesPsr0;
             $loader->classMap = ComposerStaticInit2017800ba05243e7ea0832de64e8fe05::$classMap;
 
         }, null, ClassLoader::class);

@@ -21,6 +21,7 @@ return array(
     'Illuminate\\Contracts\\' => array($vendorDir . '/illuminate/contracts'),
     'Illuminate\\Container\\' => array($vendorDir . '/illuminate/container'),
     'Illuminate\\Config\\' => array($vendorDir . '/illuminate/config'),
+    'Doctrine\\Common\\Inflector\\' => array($vendorDir . '/doctrine/inflector/lib/Doctrine/Common/Inflector'),
     'Composer\\Installers\\' => array($vendorDir . '/composer/installers/src/Composer/Installers'),
     'Brain\\Hierarchy\\' => array($vendorDir . '/brain/hierarchy/src'),
 );
